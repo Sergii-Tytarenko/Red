@@ -205,31 +205,31 @@ function closeBurgerNav () {
 }
 
 
-/* Skills slider
+/* Founders slider
 ---------------------------------------------------------------*/
-const skillsSlider = document.querySelector('.skills__body');
-let mySwiper;
+const foundersSlider = document.querySelector('.founders__body');
+let newSwiper;
 
 function mobileSlider() {
-	if (window.innerWidth <= 419 && skillsSlider.dataset.mobile == 'false') {
-		mySwiper = new Swiper(skillsSlider, {
+	if (window.innerWidth <= 767 && foundersSlider.dataset.mobile == 'false') {
+		newSwiper = new Swiper(foundersSlider, {
          slidesPerView: 1,
          spaceBetween: 50,
-         wrapperClass: 'skills__list',
-         slideClass: 'skills__item',
+         wrapperClass: 'founders__list',
+         slideClass: 'founders__column',
          pagination: {
-            el: '.skills__pagination',
+            el: '.founders__pagination',
             type: 'bullets',
           },    
 		});
 
-		skillsSlider.dataset.mobile = 'true';
+		foundersSlider.dataset.mobile = 'true';
 	}
 
-	if (window.innerWidth > 419) {
-		skillsSlider.dataset.mobile = 'false';
-		if (skillsSlider.classList.contains('swiper-container-initialized')) {
-         mySwiper.destroy();
+	if (window.innerWidth > 767) {
+		foundersSlider.dataset.mobile = 'false';
+		if (foundersSlider.classList.contains('swiper-container-initialized')) {
+         newSwiper.destroy();
 		}
 	}
 }
@@ -239,8 +239,6 @@ mobileSlider()
 window.addEventListener('resize', () => {
 	mobileSlider();
 });
-
-
 
 
 ;
@@ -331,7 +329,7 @@ if (smoothLinks.length > 0) {
 	
 			document.querySelector(id).scrollIntoView({
 				behavior: 'smooth',
-				block: 'start'
+				block: 'center'
 			});
 		});
 	};
