@@ -205,6 +205,40 @@ function closeBurgerNav () {
 }
 
 
+/* Skills slider
+---------------------------------------------------------------*/
+const skillsSlider = document.querySelector('.skills__body');
+let mySwiper;
+
+function mobileSlider() {
+	if (window.innerWidth <= 419 && skillsSlider.dataset.mobile == 'false') {
+		mySwiper = new Swiper(skillsSlider, {
+         slidesPerView: 1,
+         spaceBetween: 50,
+         wrapperClass: 'skills__list',
+         slideClass: 'skills__item',
+         pagination: {
+            el: '.skills__pagination',
+            type: 'bullets',
+          },    
+		});
+
+		skillsSlider.dataset.mobile = 'true';
+	}
+
+	if (window.innerWidth > 419) {
+		skillsSlider.dataset.mobile = 'false';
+		if (skillsSlider.classList.contains('swiper-container-initialized')) {
+         mySwiper.destroy();
+		}
+	}
+}
+
+mobileSlider()
+
+window.addEventListener('resize', () => {
+	mobileSlider();
+});
 
 
 
