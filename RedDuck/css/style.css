@@ -255,10 +255,10 @@ body.lock {
 }
 
 .title {
-  margin-bottom: 80px;
+  margin-bottom: 75px;
   color: #fde7b5;
-  font-size: calc(40px + 30 * ((100vw - 320px) / 1600));
-  font-weight: 600;
+  font-size: calc(40px + 15 * ((100vw - 320px) / 1600));
+  font-weight: 700;
   line-height: 1.1;
   text-align: center;
   text-transform: uppercase;
@@ -270,6 +270,7 @@ body.lock {
 
 .title--white {
   color: #fff;
+  font-weight: 600;
 }
 
 /*----------------------------------------------------------------
@@ -442,8 +443,7 @@ body.lock {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-bottom: 140px;
-  padding: 130px 15px 50px;
+  padding: 130px 15px 100px;
   min-height: 100vh;
 }
 
@@ -495,8 +495,7 @@ body.lock {
 ----------------------------------------------------------------*/
 
 .skills {
-  padding-top: calc(90px + 70 * ((100vw - 320px) / 1600));
-  padding-bottom: calc(90px + 35 * ((100vw - 320px) / 1600));
+  padding: 80px 0 45px;
 }
 
 .skills__title {
@@ -525,7 +524,7 @@ body.lock {
 
 .item-skill__logo {
   min-height: 125px;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
 }
 
 .item-skill__logo img {
@@ -544,7 +543,7 @@ body.lock {
 ----------------------------------------------------------------*/
 
 .stack {
-  padding-bottom: calc(70px + 90 * ((100vw - 320px) / 1600));
+  padding-bottom: calc(70px + 20 * ((100vw - 320px) / 1600));
 }
 
 .stack__title {
@@ -590,8 +589,7 @@ body.lock {
 ----------------------------------------------------------------*/
 
 .founders {
-  padding-top: 25px;
-  padding-bottom: calc(90px + 70 * ((100vw - 320px) / 1600));
+  padding: 25px 0 15px;
   color: #5a0000;
   background-color: #fff;
 }
@@ -626,6 +624,7 @@ body.lock {
   -webkit-box-flex: 0;
       -ms-flex: 0 1 25%;
           flex: 0 1 25%;
+  margin-bottom: 55px;
   padding: 0 20px;
 }
 
@@ -634,7 +633,7 @@ body.lock {
 }
 
 .founders__pagination.swiper-pagination-bullets {
-  bottom: 0 !important;
+  position: absolute;
 }
 
 .founders__pagination .swiper-pagination-bullet {
@@ -649,8 +648,9 @@ body.lock {
 }
 
 .person__photo {
-  margin-bottom: 35px;
-  border-radius: 0 45px 0 45px;
+  margin-bottom: 25px;
+  border-radius: 0 25% 0 25%;
+  overflow: hidden;
 }
 
 .person__photo img {
@@ -667,7 +667,6 @@ body.lock {
   display: table-caption;
   margin-bottom: 10px;
   font-size: 42px;
-  font-weight: 400;
   text-transform: capitalize;
 }
 
@@ -684,7 +683,7 @@ body.lock {
       -ms-flex: 0 0 40px;
           flex: 0 0 40px;
   position: relative;
-  padding-right: 10px;
+  padding-right: 12px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1439,6 +1438,13 @@ button.swiper-pagination-bullet {
   backface-visibility: hidden;
 }
 
+@media (min-width: 767px) {
+  .founders__list {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+}
+
 @media (min-width: 768px) {
   .btn:hover,
   .btn:focus {
@@ -1555,8 +1561,11 @@ button.swiper-pagination-bullet {
 
   .intro {
     min-height: 600px;
-    margin-bottom: 70px;
     padding-top: 100px;
+  }
+
+  .skills {
+    padding-top: 50px;
   }
 
   .skills__item {
@@ -1566,7 +1575,7 @@ button.swiper-pagination-bullet {
   }
 
   .item-skill__logo {
-    margin-bottom: 40px;
+    margin-bottom: 20px;
   }
 
   .stack__item {
@@ -1574,10 +1583,6 @@ button.swiper-pagination-bullet {
         -ms-flex: 0 1 25%;
             flex: 0 1 25%;
     padding: 10px;
-  }
-
-  .founders__title {
-    margin-bottom: 40px;
   }
 
   .founders__list {
@@ -1614,13 +1619,6 @@ button.swiper-pagination-bullet {
     -webkit-box-flex: 0;
         -ms-flex: 0 1 33.333%;
             flex: 0 1 33.333%;
-  }
-}
-
-@media (min-width: 767px) and (max-width: 1024px) {
-  .founders__list {
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
   }
 }
 
