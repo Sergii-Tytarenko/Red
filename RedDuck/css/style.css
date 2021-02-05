@@ -600,6 +600,10 @@ body.lock {
   max-width: 1025px;
 }
 
+.founders__title {
+  margin-bottom: 50px;
+}
+
 .founders__body {
   position: relative;
   overflow: hidden;
@@ -660,8 +664,9 @@ body.lock {
 }
 
 .person__name {
+  display: table-caption;
   margin-bottom: 10px;
-  font-size: calc(28px + 14 * ((100vw - 320px) / 1600));
+  font-size: 42px;
   font-weight: 400;
   text-transform: capitalize;
 }
@@ -1452,12 +1457,14 @@ button.swiper-pagination-bullet {
 }
 
 @media (max-width: 1024px) {
-  .founders__list {
-    margin: 0 -10px;
+  .founders__column {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 50%;
+            flex: 0 1 50%;
   }
 
-  .founders__column {
-    padding: 0 10px;
+  .person__name {
+    display: block;
   }
 }
 
@@ -1569,6 +1576,10 @@ button.swiper-pagination-bullet {
     padding: 10px;
   }
 
+  .founders__title {
+    margin-bottom: 40px;
+  }
+
   .founders__list {
     position: relative;
     width: 100%;
@@ -1603,6 +1614,13 @@ button.swiper-pagination-bullet {
     -webkit-box-flex: 0;
         -ms-flex: 0 1 33.333%;
             flex: 0 1 33.333%;
+  }
+}
+
+@media (min-width: 767px) and (max-width: 1024px) {
+  .founders__list {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
   }
 }
 
