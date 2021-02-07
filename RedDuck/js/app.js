@@ -329,7 +329,7 @@ if (smoothLinks.length > 0) {
 	
 			document.querySelector(id).scrollIntoView({
 				behavior: 'smooth',
-				block: 'center'
+				block: 'start'
 			});
 		});
 	};
