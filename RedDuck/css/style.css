@@ -715,7 +715,7 @@ body.lock {
   font-weight: 300;
   font-size: 14px;
   text-align: center;
-  line-height: 30px;
+  line-height: 27px;
   border-radius: 50%;
   background-color: #5a0000;
   -webkit-transition: background .3s;
@@ -1604,6 +1604,7 @@ button.swiper-pagination-bullet {
 .main-footer {
   padding: 25px 0 125px;
   color: #000;
+  font-weight: 300;
   background-color: #fff;
 }
 
