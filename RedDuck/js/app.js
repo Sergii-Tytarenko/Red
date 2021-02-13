@@ -83,8 +83,6 @@ mobileSlider()
 window.addEventListener('resize', () => {
 	mobileSlider();
 });
-
-
 ;
 /* WebP
 -----------------------------------------------------------------------------*/
@@ -164,15 +162,20 @@ function body_lock_add(delay) {
 /* Smoth scroll
 -----------------------------------------------------------------------------*/
 const linkNav = document.querySelectorAll('.smooth'),
-      V = .15; 
+      V = .1; 
 for (let link of linkNav) {
-    link.addEventListener('click', function(e) {
+    link.addEventListener('click', function (e) {
         e.preventDefault(); 
+
         let w = window.pageYOffset,  
-            hash = this.href.replace(/[^#]*(.*)/, '$1');  
-        t = document.querySelector(hash).getBoundingClientRect().top,  
-            start = null;
+            hash = this.href.replace(/[^#]*(.*)/, '$1'),
+			start = null,
+			block = document.querySelector(hash),
+			marginTop = parseInt(getComputedStyle(block).marginTop),
+			t = block.getBoundingClientRect().top - marginTop;
+        	 
         requestAnimationFrame(step); 
+		
         function step(time) {
             if (start === null) start = time;
             let progress = time - start,
@@ -180,67 +183,7 @@ for (let link of linkNav) {
             window.scrollTo(0,r);
             if (r != w + t) {
                 requestAnimationFrame(step)
-            } else {
-                location.hash = hash  
             }
         }
-    }, false);
-}
-
-/* Modal Windows
------------------------------------------------------------------------------*/
-let modalLinks = document.querySelectorAll('.modal-link');
-const overlay = document.querySelector('.overlay');
-
-if (modalLinks.length > 0) {
-    for (let i = 0; i < modalLinks.length; i++) {
-        let modalLink = modalLinks[i];
-
-        modalLink.addEventListener('click', () => {
-            let linkTarget = modalLink.dataset.modal;
-            let modalWindow = document.querySelector(`${linkTarget}`);
-
-            modalActive(modalWindow);
-        });
-        
-    }
-}
-
-function modalActive (target) {
-    if (target) {
-        modalShow (target);
-
-        let closeBtn = target.querySelector('.modal__close');
-
-        closeBtn.addEventListener('click', () => {
-            modalClose (target);
-        });
-
-        overlay.addEventListener('click', () => {
-            modalClose (target);
-        });
-
-        document.addEventListener('keydown', function (e) {
-            if (e.code === 'Escape') {
-                modalClose (target);
-            }
-        });
-    }
-}
-
-function modalShow (target) {
-	target.classList.add('modal-show');
-	overlay.classList.add('modal-show');
-	if (burgerNav.classList.contains('active')) {
-		closeBurgerNav ();
-	} else {
-		body_lock(0);
-	}
-}
-
-function modalClose (target) {
-	target.classList.remove('modal-show');
-	overlay.classList.remove('modal-show');
-	body_lock(0);
-}
-;
+    });
+};
