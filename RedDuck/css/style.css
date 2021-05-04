@@ -1822,7 +1822,7 @@ button.swiper-pagination-bullet {
 
   .main-header__link:hover,
   .main-header__link:focus {
-    text-shadow: 0 0 1.5px #fbe8b4, 0 0 1.5px #fbe8b4;
+    text-shadow: .01em .01em 0 #fbe8b4, -.01em -.01em 0 #fbe8b4;
   }
 
   .founders__pagination {
@@ -2010,13 +2010,16 @@ button.swiper-pagination-bullet {
   }
 
   .main-header__list li {
-    margin: 0 0 30px;
+    margin: 0 0 60px;
   }
 
   .main-header__list li:last-child {
     margin: 0;
   }
 
+  .main-header__link {
+    font-size: 25px;
+  }
   .burger {
     display: block;
   }
