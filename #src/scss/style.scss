@@ -1,0 +1,531 @@
+@import "mixins";
+@import "fonts";
+@import "reset";
+@import "global";
+@import "forms";
+@import "header";
+
+/*----------------------------------------------------------------
+    intro
+----------------------------------------------------------------*/
+.intro {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 130px 15px 100px;
+    min-height: 100vh;
+    @media(max-width: 767px) {
+        min-height: 600px;
+        padding-top: 100px;
+    }
+    @media(max-width: 420px) {
+        padding-top: 50px;
+     }
+
+    // .intro__image
+    &__image {
+        width: 410 / 1920 * 100%;
+        min-width: 300px;
+        @media(max-width: 420px) {
+            min-width: 200px;
+        }
+        img {
+            display: block;
+            max-width: 100%;
+            object-fit: contain;
+        }
+    }
+}
+
+
+
+/*----------------------------------------------------------------
+    About
+----------------------------------------------------------------*/
+.about {
+    color: #5a0000;
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 1.2;
+    text-align: center;
+    background-color: #fff;
+    // .about__container
+    &__container {
+        position: relative;
+        bottom: -20px;
+    }
+    // .about__title
+    &__title {
+        margin-bottom: 5px;
+        font-size: 24px;
+        font-weight: 400;
+        text-transform: uppercase;
+        @media(max-width: 767px) {
+            font-size: 22px;
+        }
+    }
+    // .about__text
+    &__text {
+        padding-bottom: 170px;
+        background: url('../img/icons/hands.png') bottom center no-repeat;
+    }
+}
+
+
+
+/*----------------------------------------------------------------
+    Skills
+----------------------------------------------------------------*/
+.skills {
+    padding: 80px 0 65px;
+    @media(max-width: 767px) {
+        padding-top: 50px;
+    }
+    // .skills__title
+    &__title {
+        @media(max-width: 420px) {
+            margin-bottom: 50px;
+        }
+    }
+    // .skills__list
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    // .skills__item
+    &__item {
+        flex: 1 1 25%;
+        margin-bottom: 35px;
+        @media(max-width: 767px) {
+            flex: 1 1 50%;
+        }
+    }
+    
+}
+
+.item-skill {
+    padding: 10px 20px;
+    text-align: center;
+    // .item-skill__logo
+    &__logo {
+        min-height: 125px;
+        margin-bottom: 30px;
+        @media(max-width: 767px) {
+           margin-bottom: 20px
+        }
+        img {
+            display: block;
+            max-width: 100%;
+            margin: 0 auto;
+        }
+    }
+    // .item-skill__name
+    &__name {
+        @include adaptiv-font (32, 22, 0);
+        font-weight: 400;
+    }
+}
+
+
+
+/*----------------------------------------------------------------
+    Stack
+----------------------------------------------------------------*/
+.stack {
+    @include adaptiv-value('padding-bottom', 90, 70, 0);
+    // .stack__title
+    &__title {
+        @media(max-width: 767px) {
+            margin-bottom: 50px;
+        }
+    }
+    // .stack__list
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    // .stack__item
+    &__item {
+        flex: 0 1 12.5%;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        @media(max-width: 920px) {
+            flex: 0 1 16.666%;
+        }
+        @media(max-width: 767px) {
+            flex: 0 1 25%;
+            padding: 10px;
+        }
+        @media(max-width: 420px) {
+            flex: 0 1 33.333%;
+        }
+    }
+    // .stack__icon
+    &__icon {
+        img {
+            display: block;
+            max-width: 100%;
+            margin: 0 auto;
+        }
+    }
+    
+}
+
+
+
+/*----------------------------------------------------------------
+    Founders
+----------------------------------------------------------------*/
+.founders {
+    padding: 25px 0 15px;
+
+    color: #5a0000;
+    background-color: #fff;
+    // .founders__container
+    &__container {
+        max-width: 1025px;
+    }
+    // .founders__title
+    &__title {
+        margin-bottom: 60px;
+    }
+    // .founders__body
+    &__body {
+        position: relative;
+        overflow: hidden;
+        &.swiper-container-autoheight {
+            .skills__list{
+                align-items: flex-start;
+            }
+        }
+    }
+    // .founders__list
+    &__list {
+        display: flex;
+        margin: 0 -20px;
+        @media(min-width: 767px) {
+           flex-wrap: wrap;
+        }
+        @media(max-width: 767px) {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            box-sizing: content-box;
+            margin: 0;
+        }
+    }
+    // .founders__column
+    &__column {
+        flex: 0 1 25%;
+        margin-bottom: 55px;
+        padding: 0 20px;
+        @media(max-width: 1024px) {
+           flex: 0 1 50%;
+        }
+        @media(max-width: 767px) {
+            padding: 0;
+            flex: 0 0 auto;
+        }
+    }
+    // .founders__pagination
+    &__pagination {
+        text-align: center;
+        @media(min-width: 768px) {
+            display: none;
+        }
+        &.swiper-pagination-bullets {
+            position: absolute;
+        }
+        
+        & .swiper-pagination-bullet {
+            background: #5a0000;
+            opacity: .5;
+            &.swiper-pagination-bullet-active {
+                background: transparent;
+                border: 1px solid #5a0000;
+                opacity: .5;
+            }
+        }
+    }
+}
+
+.person {
+    // .person__photo
+    &__photo {
+        margin-bottom: 25px;
+        border-radius: 0 25% 0 25%; 
+        overflow: hidden;
+        img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+    }
+    // .person__name
+    &__name {
+        display: table-caption;
+        margin-bottom: 10px;
+        font-size: 24px;
+        text-transform: capitalize;
+        @media(max-width: 1024px) {
+            display: block;
+        }
+    }
+    // .person__inner
+    &__inner {
+        display: flex;
+        margin-bottom: 20px;
+    }
+     // .person__page
+     &__page {
+        flex: 0 0 40px;
+        position: relative;
+        padding-right: 12px;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        &:after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            right: 0;
+            width: 2px;
+            height: calc(100% - 8px);
+            transform: translate(0, -50%);
+
+            background-color: #5a0000;
+        }
+     }
+    // .person__link
+    &__link {
+        width: 30px;
+        height: 30px;
+
+        color: #fff;
+        font-weight: 300;
+        font-size: 14px;
+        text-align: center;
+        line-height: 27px;
+        
+        border-radius: 50%;
+        background-color: #5a0000;
+        transition: background .3s;
+        &:hover,
+        &:focus {
+            background-color: lighten($color: #5a0000, $amount: 10%);
+        }
+    }
+    // .person__status
+    &__status {
+        padding-left: 10px;
+    }
+    // .person__info
+    &__info {
+        font-weight: 300;
+    }
+}
+@import 'swiper-bundle.min';
+
+
+
+/*----------------------------------------------------------------
+    Progress
+----------------------------------------------------------------*/
+%point {
+    content: '';
+    position: absolute;
+
+    width: 14px;
+    height: 14px;
+
+    border: 2px solid #efdaa9;
+    border-radius: 50%;
+    background-color: #5a0000;
+    @media(max-width: 1000px) {
+        width: 11px;
+        height: 11px;
+        border-width: 1px;
+    }
+}
+
+.progress {
+    position: relative;
+    padding-bottom: 60px;
+
+    color: #fff;
+    font-size: 24px;
+    @media(max-width: 1000px) {
+        font-size: 18px;
+    }
+    @media(max-width: 767px) {
+        padding-bottom: 50px;
+        font-size: 14px;
+    }
+    &::before {
+        content: '';
+        position: absolute;
+        top: -100px;
+        left: 0;
+        width: 100%;
+        height: 100px;
+        background-color: #fff;
+    }
+    // .progress__inner
+    &__inner {
+    padding: 25px 0 0 0;
+
+    }
+    // .progress__title
+    &__title {
+        margin-bottom: 20px;
+    }
+    // .progress__logo
+    &__logo {
+        width: 17.8%;
+        min-width: 150px;
+        margin: 0 auto 95px;
+        img {
+            display: block;
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+    // .progress__body
+    &__body {
+        position: relative;
+        max-width: 1000px;
+        margin: 0 auto;
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+
+            width: 2px;
+            height: 60px;
+            transform: translate(-1px, -100%);
+
+            background-color: #efdaa9;
+            @media(max-width: 1000px) {
+                height: 50px;
+                width: 1px;
+            }
+        }
+        &::after {
+            @extend %point;
+            top: -60px;
+            left: 50%;
+            margin-left: -7px;
+            @media(max-width: 1000px) {
+                top: -50px;
+                margin-left: -6px;
+            }
+        }
+    }
+    // .progress__list
+    &__list {
+        position: relative;
+        padding: 35px 0;
+        border-top: 2px solid #efdaa9;
+        @media(max-width: 1000px) {
+            border-width: 1px;
+        }
+        @media(max-width: 767px) {
+            padding: 20px 0;
+        }
+        &::before {
+            content: '';
+            position: absolute;
+            left: 170px;
+            top: 0;
+
+            width: 2px;
+            height: 100%;
+            margin-left: -1px;
+
+            background-color: #efdaa9;
+            @media(max-width: 1000px) {
+                left: 130px;
+                width: 1px;
+                margin-left: 0;
+            }
+            @media(max-width: 767px) {
+                left: 90px;
+            }
+        }
+        &:after {
+            @extend %point;
+            left: 170px;
+            bottom: 0;
+            transform: translate(-7px, 0);
+            @media(max-width: 1000px) {
+                left: 130px;
+                transform: translate(-5px, 0);
+            }
+            @media(max-width: 767px) {
+                left: 90px;
+            }
+        }
+    }
+    // .progress__row
+    &__row {
+        display: flex;
+        padding: 10px 0;
+        &:first-child {
+            &:after,
+            &::before {
+                @extend %point;
+                top: -8px;
+                @media(max-width: 1000px) {
+                    top: -6px;
+                }
+            }
+            &:after {
+                right: 0;
+            }
+            &::before {
+                left: 0;
+            }
+        }
+    }
+    // .progress__date
+    &__date {
+        flex: 0 0 170px;
+        position: relative;
+        display: flex;
+        align-items: center;
+        span {
+            color: #fbe8b4;
+        }
+        @media(max-width: 1000px) {
+            flex: 0 0 130px;
+        }
+        @media(max-width: 767px) {
+           flex: 0 0 90px;
+        }
+        &::after {
+            @extend %point;
+            top: 50%;
+            right: 0;
+            transform: translate(7px,-50%);
+            @media(max-width: 1000px) {
+                transform: translate(6px,-50%);
+             }
+        }
+    }
+    // .progress__event
+    &__event {
+        padding-left: 45px;
+        @media(max-width: 767px) {
+            padding-left: 25px;
+        }
+    }
+}
+@import 'footer';
